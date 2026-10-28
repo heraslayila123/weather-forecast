@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Live Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <a class="brand" href="#">☁ SkyCast</a>
+      <span class="live-label">● LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+      <h1>Weather, at a glance.</h1>
+      <p class="subtitle">
+        Discover today's weather and the forecast for the next five days.
+      </p>
+    </section>
+
+    <form id="searchForm" class="search-form">
+      <span>⌕</span>
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="Search a city, e.g. Coimbatore"
+        aria-label="City name"
+        maxlength="80"
+        required
+      >
+      <button id="searchButton" type="submit">Search ↗</button>
+    </form>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <section class="weather-card">
+      <div class="weather-heading">
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2 id="cityName">Coimbatore, India</h2>
+          <p id="todayDate" class="muted"></p>
+        </div>
+        <span id="currentIcon" class="current-icon">🌤️</span>
+      </div>
+
+      <div class="temperature-row">
+        <div>
+          <span id="temperature" class="temperature">--</span>
+          <span class="degree">°C</span>
+        </div>
+        <div>
+          <p id="condition" class="condition">Loading weather...</p>
+          <p id="feelsLike" class="muted">Feels like --°C</p>
+          <p id="highLow" class="muted">H: --° L: --°</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>💧 Humidity</span>
+          <strong id="humidity">--%</strong>
+        </div>
+        <div class="stat">
+          <span>🌬️ Wind speed</span>
+          <strong id="wind">-- km/h</strong>
+        </div>
+        <div class="stat">
+          <span>🌧️ Rain chance</span>
+          <strong id="rain">--%</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN AHEAD</p>
+          <h2>5-day forecast</h2>
+        </div>
+        <span class="muted">Daily outlook</span>
+      </div>
+
+      <div id="forecast" class="forecast-grid">
+        <p class="muted">Loading forecast...</p>
+      </div>
+    </section>
+
+    <footer>
+      Weather data provided by
+      <a href="https://open-meteo.com/" target="_blank"
+         rel="noopener noreferrer">Open-Meteo</a>.
+      <p>Built with HTML, CSS & JavaScript Fetch API.</p>
+    </footer>
+  </main>
+</body>
+</html>
